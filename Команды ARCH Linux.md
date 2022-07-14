@@ -4,7 +4,7 @@ journalctl   показывает журнал работы системы
 
 journalctl -b -1   за предыдущую сессию 
 
-jornactl -b -2  за две предыдущих сессии
+journactl -b -2  за две предыдущих сессии
 
 makepkg -sir  скомпилировать файл из репозитория, установить зависимости и удалить их после установки
 
@@ -27,6 +27,20 @@ Mesa, используя ядерный драйвер, релизует в юз
 По факту, реализации Vulkan всего две: RADV и AMDVLK. RADV+ACO - это  тот же RADV, только в качестве компилятора шейдеров используется ACO  (новый, более быстрый бэкенд) вместо LLVM. Реализации OpenGL тоже две:  RadeonSI и проприетарная реализация из AMDGPU-PRO. В Mesa есть еще  реализации OpenGL для старых карт (r300, r600…), но их можно не  учитывать, если речь не о древних видеокартах.
 
 ##### Путь для конфигурации драйверов /etc/modprobe.d/
+
+создать файлы конфигурации: 
+
+```
+/etc/modprobe.d/amdgpu.conf
+options amdgpu si_support=1
+options amdgpu cik_support=1
+```
+
+```
+/etc/modprobe.d/radeon.conf
+options radeon si_support=0
+options radeon cik_support=0
+```
 
 regenerate the initramfs: mkinitcpio -p linux
 
