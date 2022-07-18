@@ -45,3 +45,17 @@ options radeon cik_support=0
 regenerate the initramfs: mkinitcpio -p linux
 
 To (re-)generate all existing presets, use the `-P`/`--allpresets` switch. This is typically used to regenerate all the initramfs images after a change of the global [#Configuration](https://wiki.archlinux.org/title/Mkinitcpio#Configuration): mkinitcpio -P
+
+sudo pacman -S vulkan-tools
+
+проверить вулкан - vulkaninfo
+
+sudo pacman -S vulkan-radeon lib32-vulkan-radeon
+
+```
+glxinfo | grep -i opengl
+clinfo | grep -i opencl
+```
+
+проверить, работает ли OpenGL и OpenCL c Mesa
+
