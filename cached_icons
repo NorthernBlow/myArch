@@ -1,0 +1,8 @@
+#!/bin/bash
+### Обновление кэша иконок в своей папке
+for d in ~/.icons/*; do gtk-update-icon-cache -f $d; done
+### Обновление кэша иконок в системе
+for d in /usr/share/icons/*; do sudo gtk-update-icon-cache -f $d; done
+### Обновление кэша шрифтов
+sudo fc-cache -fv
+fc-cache ~/.fonts
