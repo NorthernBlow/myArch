@@ -71,3 +71,4 @@ clinfo | grep -i opencl
 
 проверить, работает ли OpenGL и OpenCL c Mesa
 
+xrandr - показывает состояние иксов
